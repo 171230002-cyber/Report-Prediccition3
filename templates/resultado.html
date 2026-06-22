@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="contenedor">
+
+    <h1>Tablas de los grupos 💯</h1>
+ 
+    {% for letra, tabla in grupos.items() %}
+
+<h2>Grupo {{ letra }}</h2>
+
+<table border="1">
+    <tr>
+        <th>Equipo</th>
+        <th>Puntos</th>
+        <th>G.Favor</th>
+        <th>G.Contra</th>
+    </tr>
+
+    {% for equipo in tabla %}
+    <tr>
+        <td>{{ equipo.nombre }}</td>
+        <td>{{ equipo.puntos }}</td>
+        <td>{{ equipo.gf }}</td>
+        <td>{{ equipo.gc }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+
+{% endfor %}
+
+<h2>Los 8 mejores terceros</h2>
+
+<table border="1">
+  <tr>
+    <th>Equipo</th>
+    <th>Puntos</th>
+  </tr>
+
+  {% for equipo in mejores_terceros %}
+  <tr>
+    <td>{{ equipo.nombre }}</td>
+    <td>{{ equipo.puntos }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+</div>
+</body>
+</html>
